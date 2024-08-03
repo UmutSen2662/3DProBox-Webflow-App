@@ -1,12 +1,10 @@
 <script lang="ts">
-    import { ComposedModal, ModalHeader, ModalBody, ClickableTile, TextInput, Form } from "carbon-components-svelte";
+    import { ComposedModal, ModalHeader, ModalBody, ClickableTile, TextInput } from "carbon-components-svelte";
     import { onMount } from "svelte";
     import Fuse from "fuse.js";
 
     export let openCreateFlow;
 	export let isUserModelOpen = false;
-
-	// The new iframe element to edit and add
 	export let newIframe: string = "";
 
     const fakeModels = async() => {return [
@@ -71,7 +69,7 @@
 	<ModalHeader label="Select" title="Select a Model" class="modal-header">
         <form id="form"> <TextInput placeholder="Search using model name or tag" class="search" /> </form>
     </ModalHeader>
-	<ModalBody class="modal-body" style="height: 100%;">
+	<ModalBody class="modal-body" style="height: 100%;" hasScrollingContent={true}>
         <div class="iframe-container" style="margin-top: 12px;">
             {#each iframes as iframe}
             <ClickableTile class="tile" on:click={(e) => {

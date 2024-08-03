@@ -2,11 +2,7 @@
 	import { ComposedModal, ModalHeader, ModalBody, Form } from "carbon-components-svelte";
 
     export let listAllModels;
-
-	//Flag to see if the modal to edit iframe attributes is open 
 	export let isEditModalOpen = false;
-
-	// The selected iframe element to edit
 	export let iframeSelected: IFrameElement;
 
 	// Set user-edited attributes back to iframe element

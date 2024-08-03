@@ -6,32 +6,17 @@
 	import { onMount } from "svelte";
 	import './styles.css';
 
-	// State vars
-	// List of all iframe custom elements on a given page (along with a map of their HTML attributes)
-	let iframeElements: Promise<IFrameElement>[];
-
-	// Flag to see if we've checked the page for iframes yet
+	// Flags to show/hide modals
+	let isEditModalOpen = false;
+	let isCreateModalOpen = false;
+	let isUserModelOpen = false;
 	let hasCheckedIframes = false;
 
-	// Flag to see if the modal to edit iframe attributes is open
-	let isEditModalOpen = false;
-
-	// The selected iframe element to edit
+	let iframeElements: Promise<IFrameElement>[];
 	let iframeSelected: IFrameElement;
-
-	// Flag to see if the modal to create iframe custom elements is open
-	let isCreateModalOpen = false;
-
-	// Flag to see if the user model selectoe is open
-	let isUserModelOpen = false;
-
-	// New iframe sent by SelectUserModels
 	let newIframe: string = "";
-
-	// The container element to insert/append the iframe to
 	let rootElementToInsert: AnyElement | null;
 
-	// Search the page for all Models
 	const listAllModels = async () => {
 		// Get all elements on the page
 		const pageElements = await webflow.getAllElements();
@@ -48,7 +33,7 @@
 			}));
 			
 
-			// Get a list of iframes
+			// Get a list of 3DProBox iframes
 			const filteredElements: DOMElement[] = pageElements.filter((_, idx) => domElementTestMapping[idx]) as DOMElement[];
 
 			// Create a new structure that has the iframe DOMElement object, as well as its attributes
@@ -125,15 +110,15 @@
 				{/await}
 			{/each}
 		</div>
-		{#if iframeSelected}
-		<EditAttributesModal
-			listAllModels={listAllModels}
-			iframeSelected={iframeSelected}
-			bind:isEditModalOpen={isEditModalOpen}
-		/>
-		{/if}
 	{:else if hasCheckedIframes && iframeElements?.length <= 0 }
 		<p>No Models found</p>
+	{/if}
+	{#if iframeSelected}
+	<EditAttributesModal
+		listAllModels={listAllModels}
+		iframeSelected={iframeSelected}
+		bind:isEditModalOpen={isEditModalOpen}
+	/>
 	{/if}
 	<CreateIframeModal
 		listAllModels={listAllModels}
