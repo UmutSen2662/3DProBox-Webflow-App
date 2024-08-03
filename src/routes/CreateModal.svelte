@@ -86,7 +86,7 @@
 </script>
 
 <ComposedModal open={isCreateModalOpen} on:open={onOpen} on:close={() => isCreateModalOpen = false}>
-	<ModalHeader label="Embed" title="Embed 3DProBox Model" />
+	<ModalHeader title="Embed 3DProBox Model" />
 	<ModalBody class="modal-body">
 		<Form class="model-embed-form" on:submit={createIframe}>
 			<TextArea labelText="Add embed code" name="new-iframe-code" placeholder={`Add iframe embed code you got from 3DProBox`} />
@@ -115,5 +115,6 @@
 			</div>
 			<hr>
 		</div>
+		<div style="height: 40px;"></div>
 	</ModalBody>
 </ComposedModal>

@@ -51,12 +51,11 @@ button:active {
 
 .main-btn-set {
   display: flex;
-  justify-content: center;
   gap: 10px;
-  width: 100%;
+  width: 360px;
 }
 .main-btn-set button {
-  width: 24%;
+  width: 100%;
 }
 
 .main-container {
@@ -70,11 +69,15 @@ button:active {
 }
 .modal-header{
   padding: 1rem;
-  padding-bottom: 0;
+  margin-bottom: 0;
 }
 .modal-body {
-  margin-bottom: 60px;
+  margin-bottom: 1rem;
   padding-top: 0;
+}
+
+.search {
+  margin-top: 6px;
 }
 
 .model-settings {
@@ -100,10 +103,4 @@ button:active {
   right: 20px;
   bottom: 20px;
   width: 100px;
-}
-
-.search {
-  width: 100%;
-  margin: 10px;
-  padding: 6px;
 }

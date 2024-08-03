@@ -76,10 +76,12 @@
 </script>
 
 <div class="main-container">
-	<h1>{"3DProBox Model Manager"}</h1>
-	<div class="main-btn-set">
-		<button on:click={() => {isUserModelOpen = true}}>Search user models</button>
-		<button on:click={openCreateFlow}>Embed model</button>
+	<div style="display: flex; justify-content: space-between; padding: 10px; width: 100%;">
+		<p style="font-size: xx-large">{"3DProBox Model Manager"}</p>
+		<div class="main-btn-set">
+			<button on:click={() => {isUserModelOpen = true}}>Search user models</button>
+			<button on:click={openCreateFlow}>Embed model</button>
+		</div>
 	</div>
 	{#if hasCheckedIframes && iframeElements?.length > 0}
 		<p>Click each iframe to find it on the Designer</p>

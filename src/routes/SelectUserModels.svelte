@@ -66,11 +66,11 @@
 </script>
 
 <ComposedModal open={isUserModelOpen} on:close={() => isUserModelOpen = false}>
-	<ModalHeader label="Select" title="Select a Model" class="modal-header">
+	<ModalHeader title="Select a Model" class="modal-header">
         <form id="form"> <TextInput placeholder="Search using model name or tag" class="search" /> </form>
     </ModalHeader>
-	<ModalBody class="modal-body" style="height: 100%;" hasScrollingContent={true}>
-        <div class="iframe-container" style="margin-top: 12px;">
+	<ModalBody class="modal-body">
+        <div class="iframe-container">
             {#each iframes as iframe}
             <ClickableTile class="tile" on:click={(e) => {
                 e.preventDefault();

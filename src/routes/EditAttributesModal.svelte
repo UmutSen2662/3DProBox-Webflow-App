@@ -26,7 +26,7 @@
 </script>
 
 <ComposedModal open={isEditModalOpen} on:close={() => isEditModalOpen = false}>
-	<ModalHeader label="Edit" title="Edit attributes" />
+	<ModalHeader title="Edit attributes" />
 	<ModalBody class="modal-body">
 		<Form class="iframe-attr-form" on:submit={editSource}>
 			<div class="model-settings">
