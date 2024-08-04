@@ -59,6 +59,7 @@
     };
 
     const selectIframeElement = (embed: string) => {
+        newIframe = "";
         newIframe = embed;
         isUserModelOpen = false;
         openCreateFlow();
@@ -74,6 +75,7 @@
             {#each iframes as iframe}
             <ClickableTile class="tile" on:click={(e) => {
                 e.preventDefault();
+                console.log(iframe.embed);
                 selectIframeElement(iframe.embed);
             }}>
                 <div style="pointer-events:none">

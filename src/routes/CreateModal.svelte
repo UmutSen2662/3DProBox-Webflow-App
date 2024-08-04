@@ -13,6 +13,7 @@
 	});
 
 	const onOpen = () => {
+		console.log(newIframe);
 		if (textarea) {
 			textarea.value = newIframe;
 		};
@@ -83,9 +84,14 @@
 			listAllModels();
 		}
 	};
+
+	const onClose = () => {
+		isCreateModalOpen = false;
+		newIframe = "";
+	};
 </script>
 
-<ComposedModal open={isCreateModalOpen} on:open={onOpen} on:close={() => isCreateModalOpen = false}>
+<ComposedModal open={isCreateModalOpen} on:open={onOpen} on:close={onClose}>
 	<ModalHeader title="Embed 3DProBox Model" />
 	<ModalBody class="modal-body">
 		<Form class="model-embed-form" on:submit={createIframe}>
