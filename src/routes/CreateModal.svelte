@@ -38,10 +38,9 @@
 			return;
 		}
 		if (rootElementToInsert?.children) {
-			// Set attributes from iframe code snippet onto the element preset
-			// Again, we don't need to await every setAttribute() call, so we can
-			// track a list of the Promises returned from that method, and await for
-			// them to resolve all at once
+			// Set attributes from iframe code snippet onto the element preset we don't need to
+			// await every setAttribute() call, so we can track a list of the Promises returned 
+			// from that method, and await for them to resolve all at once
 			const template = document.createElement('template');
 			template.innerHTML = textarea.value.trim();
 			const result = template.content.children[0];

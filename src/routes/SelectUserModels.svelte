@@ -28,7 +28,7 @@
     interface api { name: string, tags: string[], embed: string }
     let search: string = "";
     let iframes: api[] = [];
-    // The search checker
+    
     onMount(async () => {
         const input = document.getElementsByClassName("search")[0] as HTMLInputElement;
         const form = document.getElementById("form") as HTMLFormElement;
